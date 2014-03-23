@@ -30,7 +30,7 @@
   ],
   "bugs": "https://github.com/hudsonfoo/jquery-getscripts/issues",
   "homepage": "https://github.com/hudsonfoo/jquery-getscripts",
-  "docs": "https://github.com/hudsonfoo/jquery-getscripts",
+  "docs": "https://github.com/hudsonfoo/jquery-getscripts/blob/1.0.0/README.md",
   "download": "https://github.com/hudsonfoo/jquery-getscripts",
   "repository": {
     "type": "git",
