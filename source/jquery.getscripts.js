@@ -4,7 +4,7 @@
   if ($.getScripts) { return; }
 
   $.getScripts = function (options) {
-    var _options, _sync, _response;
+    var _options, _sync, _async, _response;
 
     _options = $.extend({
       'async': false,
@@ -16,6 +16,7 @@
     }
 
     _response = [];
+    
     _sync = function () {
       $.ajax({
         url: _options.urls.shift(),
@@ -32,16 +33,23 @@
       });
     };
 
+    _async = function () {
+      _response.push(arguments);
+      if (_response.length === _options.urls.length &&
+          typeof options.success === 'function') {
+        options.success($.merge([], _response));
+      }
+    };
+
     if (_options.async === true) {
       for (var i = 0; i < _options.urls.length; i++) {
-        _response.push($.ajax({
+        $.ajax({
           url: _options.urls[i],
+          dataType: 'script',
           cache: _options.cache,
-          dataType: 'script'
-        }));
+          success: _async
+        });
       }
-
-      options.success($.merge([], _response));
     } else {
       _sync();
     }

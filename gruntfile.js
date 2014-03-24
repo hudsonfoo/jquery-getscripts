@@ -11,6 +11,13 @@ module.exports = function(grunt) {
       all: ["source/jquery.getscripts.js"]
     },
 
+    qunit: {
+      options: {
+        timeout: 10000
+      },
+      all: ['tests/*.html']
+    },
+
     uglify: {
       options: {
         compress: true,
@@ -39,7 +46,9 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
 
-  grunt.registerTask('dist', ['jshint', 'uglify']);
+  grunt.registerTask('test', ['jshint', 'qunit']);
+  grunt.registerTask('dist', ['test', 'uglify']);
   grunt.registerTask('default', ['dist']);
 };
