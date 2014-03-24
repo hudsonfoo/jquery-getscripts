@@ -1,4 +1,4 @@
-# jQuery.getScripts
+# jQuery.getScripts [![Build Status](https://travis-ci.org/hudsonfoo/jquery-getscripts.svg?branch=master)](https://travis-ci.org/hudsonfoo/jquery-getscripts)
 
 Load one or multiple JavaScript files from the server using a GET HTTP request, then execute them..
 
