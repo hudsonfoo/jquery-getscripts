@@ -2,7 +2,7 @@
   "name": "jquery.getscripts",
   "title": "jQuery.getScripts",
   "description": "Load one or multiple JavaScript files from the server using a GET HTTP request, then execute them..",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "jquery",
     "javascript",
